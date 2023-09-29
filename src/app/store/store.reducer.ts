@@ -1,6 +1,6 @@
-import { combineReducers } from "@ngrx/store";
-import { counterReducer } from "./counter/counter.reducer";
+import { countReducer } from './count/count.reducer';
 
-export const reducers = combineReducers({
-    count: counterReducer,
-});
+const rootReducer = {
+  count: countReducer,
+};
+export default rootReducer;

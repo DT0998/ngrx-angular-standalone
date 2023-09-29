@@ -1,8 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
-import { increment } from './counter.actions';
+import { increment } from './count.actions';
 
 const initialState = 0;
-export const counterReducer = createReducer(
+export const countReducer = createReducer(
   initialState,
   on(increment, (state,action) => state + action.value)
 );
