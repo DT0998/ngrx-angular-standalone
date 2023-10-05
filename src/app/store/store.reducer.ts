@@ -1,6 +1,6 @@
-import { countReducer } from './count/count.reducer';
+import * as fromCount from './count/count.reducer';
+import { ActionReducerMap } from '@ngrx/store';
 
-const rootReducer = {
-  count: countReducer,
+export const appReducer: ActionReducerMap<any> = {
+  count: fromCount.countReducer,
 };
-export default rootReducer;

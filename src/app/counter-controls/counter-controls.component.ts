@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-
 import { Store } from '@ngrx/store';
 import { decrement, increment } from '../store/count/count.actions';
-// import { IncrementAction } from '../store/count/count.actions';
+
 
 @Component({
   selector: 'app-counter-controls',
   templateUrl: './counter-controls.component.html',
   styleUrls: ['./counter-controls.component.css'],
+  standalone: true,
 })
 export class CounterControlsComponent {
   constructor(private store: Store) {}
