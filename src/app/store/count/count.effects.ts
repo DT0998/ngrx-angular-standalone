@@ -1,12 +1,14 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { decrement, increment, init, set } from './count.actions';
 import { of, switchMap, tap, withLatestFrom } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectCount } from './count.selector';
 
 @Injectable()
 export class CountEffects {
+  private store = inject(Store<{ count: number }>);
+  private actions$ = inject(Actions);
   // newer version
   loadCount = createEffect(() =>
     this.actions$.pipe(
@@ -43,7 +45,10 @@ export class CountEffects {
   //     })
   //   );
   constructor(
-    private actions$: Actions,
-    private store: Store<{ count: number }>
-  ) {}
+    // private actions$: Actions,
+    // private store: Store<{ count: number }>
+  ) {
+    console.log(this.actions$)
+    console.log(this.store)
+  }
 }
